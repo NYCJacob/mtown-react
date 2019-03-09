@@ -1,0 +1,49 @@
+@import url("~@fortawesome/fontawesome-pro/css/all.css"); /* FA CSS import */
+
+.Collapsible {
+    background-color: white; }
+
+.Collapsible__contentInner {
+    padding: 10px;
+    border: 1px solid #ebebeb;
+    border-top: 0;
+}
+.Collapsible__contentInner p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px; }
+
+.Collapsible__contentInner p, table {
+    background: rgba(255, 171, 46, 0.2);
+}
+
+
+.Collapsible__contentInner p:last-child {
+    margin-bottom: 0; }
+
+.Collapsible__trigger {
+    display: block;
+    font-weight: 400;
+    text-decoration: none;
+    color: #333333;
+    position: relative;
+    border: 2px solid #ffad2c;
+    padding: 0.5em;
+    /*background: #ffad2c;*/
+}
+.Collapsible__trigger:after {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300;
+    /*content: '\f107';*/
+    content: '\f063';
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    transition: transform 300ms; }
+.Collapsible__trigger.is-open:after {
+    transform: rotateZ(90deg); }
+
+.years {
+    border-bottom: 1px solid black;
+}
