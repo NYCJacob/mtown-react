@@ -3,7 +3,6 @@ import PDFViewer from '../PDFViewer/PDFViewer';
 import PDFJSBackend from '../../api/pdfbackend/pdfjs';
 import { Typography } from '@smooth-ui/core-sc';
 import { Col, Row, Button} from '@smooth-ui/core-sc';
-import SubTabNav from "../SubTabNav";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 
@@ -15,6 +14,7 @@ class RescueSquad extends Component {
         };
         this.nextScreen = this.nextScreen.bind(this);
         this.backScreen = this.backScreen.bind(this);
+        this.introScreen = this.introScreen.bind(this);
     }
 
     nextScreen() {
@@ -28,6 +28,12 @@ class RescueSquad extends Component {
         let backPage = this.state.rescueContent - 1;
         this.setState(state => ({
             rescueContent: backPage
+        }))
+    }
+
+    introScreen() {
+        this.setState(state => ({
+            rescueContent: 0
         }))
     }
 
@@ -97,7 +103,7 @@ class RescueSquad extends Component {
                             </p>
                             <Button onClick={this.nextScreen}>
                                 <span>
-                                Next: Key data for the ambulance services in Olive, New Palz, and Marbletown.
+                                Next: Key data for the ambulance services in Olive, New Paltz, and Marbletown.
                                 </span>
                                 <i className="far fa-arrow-right" style={{color: "orange", fontSize: "1em", paddingLeft: "0.5em" }}></i>
                             </Button>
@@ -119,21 +125,43 @@ class RescueSquad extends Component {
                                 <sub><strong>*New Paltz states all revenue as other rather than listing any revenue for government grants.  It is unclear how much is from New Platz.  </strong> </sub>
                             </Col>
                         </Row>
-                        <Row>
-                            <Col>
-                                <Button onClick={this.backScreen}>Back to Intro on Marbletown First Aid Unit Budget</Button>
+                        <Row  >
+                            <Col style={ {display: "flex"} }>
+                                <Button onClick={this.backScreen} style={ {flex: "1"} }  >
+                                    <i className="far fa-arrow-left" style={{color: "orange", fontSize: "1em", paddingLeft: "0.5em" }}></i>
+                                    <span style={ { paddingLeft: "0.5em" } }>Back to Intro</span>
+                                </Button>
                             </Col>
-                            <Col>
-                                <Button onClick={this.nextScreen}>Next: Presentation by Marbletown First Aid Unit ("MFAU") </Button>
+                            <Col style={ {display: "flex"} }>
+                                <Button onClick={this.nextScreen} style={ {flex: "1"} } >
+                                    <span>Next: First Aid Unit Presentation</span>
+                                    <i className="far fa-arrow-right" style={{color: "orange", fontSize: "1em", paddingLeft: "0.5em" }}></i>
+                                </Button>
                             </Col>
                         </Row>
                     </div>
                 }
                 {this.state.rescueContent === 2 &&
-                <div className="pdfapp" style={ {height: "80vh"} }>
+                    <div>
+                        <div className="pdfapp" style={ {height: "80vh"} }>
                             <PDFViewer backend={PDFJSBackend}
                             src="2019_MFAU_presentation .pdf"
                             />
+                        </div>
+                        <Row  >
+                            <Col style={ {display: "flex"} }>
+                                <Button onClick={this.backScreen} style={ {flex: "1"} }  >
+                                    <i className="far fa-arrow-left" style={{color: "orange", fontSize: "1em", paddingLeft: "0.5em" }}></i>
+                                    <span style={ { paddingLeft: "0.5em" } }>Back to data table</span>
+                                </Button>
+                            </Col>
+                            <Col style={ {display: "flex"} }>
+                                <Button onClick={this.introScreen} style={ {flex: "1"} } >
+                                    <span>Back to intro</span>
+                                    <i className="far fa-arrow-right" style={{color: "orange", fontSize: "1em", paddingLeft: "0.5em" }}></i>
+                                </Button>
+                            </Col>
+                        </Row>
                     </div>
                 }
 
