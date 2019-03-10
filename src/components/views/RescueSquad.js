@@ -127,7 +127,7 @@ class RescueSquad extends Component {
                     </div>
                 }
                 {this.state.rescueContent === 2 &&
-                    <div>
+                <div className="pdfapp" style={ {height: "75vh"} }>
                             <PDFViewer backend={PDFJSBackend}
                             src="2019_MFAU_presentation .pdf"
                             />

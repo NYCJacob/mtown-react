@@ -129,8 +129,8 @@ class AccApt201901 extends Component {
                     <Col>
                         <article id="draft-law-content">
                             <section className="caption">
-                                <Typography variant="h1">Local Law No.__ of 2019 </Typography>
-                                <Typography variant="h2">
+                                <Typography variant="h2">Local Law No.__ of 2019 </Typography>
+                                <Typography variant="h3">
                                     Accessory Apartment Law Town of Marbletown
                                 </Typography>
                             </section>
