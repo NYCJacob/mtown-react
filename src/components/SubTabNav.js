@@ -109,7 +109,7 @@ class TabNav extends Component {
             <StyledSubTab>
                 <ul className="navigation">
                         {tabConfig.map( (tab, index) => {
-                            const tabNum = index.toString();
+                            // const tabNum = index.toString();
                             return(
                                 <li>
                                     <NavLink key={"sub" + index} exact to={tab.route}>

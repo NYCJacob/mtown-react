@@ -68,7 +68,7 @@ class RescueSquad extends Component {
         ];
 
         return (
-            <div className="pdfapp" style={ {height: "75vh"} }>
+            <div>
                 { this.state.rescueContent === 0 &&
                     <Row>
                         <Col>
@@ -96,7 +96,10 @@ class RescueSquad extends Component {
                                 payments.
                             </p>
                             <Button onClick={this.nextScreen}>
-                                Next: Key data for the ambulance services in Olive, New Palz, and Marbletown in one table.
+                                <span>
+                                Next: Key data for the ambulance services in Olive, New Palz, and Marbletown.
+                                </span>
+                                <i className="far fa-arrow-right" style={{color: "orange", fontSize: "1em", paddingLeft: "0.5em" }}></i>
                             </Button>
 
                         </Col>
@@ -127,7 +130,7 @@ class RescueSquad extends Component {
                     </div>
                 }
                 {this.state.rescueContent === 2 &&
-                <div className="pdfapp" style={ {height: "75vh"} }>
+                <div className="pdfapp" style={ {height: "80vh"} }>
                             <PDFViewer backend={PDFJSBackend}
                             src="2019_MFAU_presentation .pdf"
                             />

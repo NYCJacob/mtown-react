@@ -12,7 +12,7 @@ const TownBoardLinks = () => (
             <hr />
             <li>
                 <NavLink exact to="/townboard/rescuesquad">
-                    Marbletown Rescue Squad 2019 Budget
+                    Rescue Squad Budget
                 </NavLink>
             </li>
         </ul>
