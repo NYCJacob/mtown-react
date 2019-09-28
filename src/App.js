@@ -16,6 +16,8 @@ import Contact from "./components/views/Contact";
 import SevReport from "./components/views/SevReport"
 import Homepage from "./components/views/Homepage"
 import AccAptUCPB from "./components/views/AccAptUCPB";
+import STRLaw from "./components/views/STRLaw";
+import StrEaf from "./components/views/StrEaf";
 
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
 
@@ -55,6 +57,8 @@ class App extends Component {
                                 <Route path="/contact" component={Contact}/>
                                 <Route path="/proposedlaws/accaptsup" component={AccAptStatus}/>
                                 <Route exact path="/proposedlaws/accapt/ucpb-recommendations" component={AccAptUCPB} />
+                                <Route exact path="/proposedlaws/str/str-2019sept" component={STRLaw}/>
+                                <Route path="/proposedlaws/str/str-environmental-assessment-form" component={StrEaf}/>
                                 <Route exact path="/zoning" component={ZoningMap}/>
                                 <Route exact path="/" component={Homepage}/>
                                 <Route component={NoMatch}/>
