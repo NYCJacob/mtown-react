@@ -32,7 +32,8 @@ class App extends Component {
     return (
         <BrowserRouter>
                     <Grid style={ {
-                        padding: "2rem",
+                        // margin: "0.5rem auto",
+                        // padding: "2rem",
                         border: "1px solid grey",
                         boxShadow: "0 2px 10px #000"
                     } }>
@@ -44,6 +45,8 @@ class App extends Component {
                                 <OverlayHamburger/>
                             </StyledHamburgerCol>
                         </Row>
+
+
                             <Helmet>
                                 <title>MarbletownInfo: local politics of Marbletown NY</title>
                             </Helmet>

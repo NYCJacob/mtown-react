@@ -2,6 +2,11 @@ import React from 'react';
 import { Row, Col, Typography, styled, css, down } from '@smooth-ui/core-sc'
 import { NavLink } from 'react-router-dom';
 
+const StyledHeader = styled.div`
+  margin: 0 auto;
+  max-width: 100%;
+`
+
 const HeaderContainer = styled.h1`
 * { box-sizing: border-box; }
     //margin-bottom: 0.5em;
@@ -62,7 +67,7 @@ const Logo2 = styled.span`
 
 function Header(props) {
     return (
-        <div>
+        <StyledHeader>
             <Row >
                 <Col>
                     <HeaderContainer>
@@ -76,13 +81,13 @@ function Header(props) {
             </Row>
             <Row>
                 <Col mt={ {xs: 0, md:1} }>
-                    <Typography fontSize={{xs: "0.8em",md: "1.0em"}} pt={0}>
+                    <Typography fontSize={{xs: "0.8em",md: "0.9em"}} pt={0}>
                         <em>Providing insight into local politics of Marbletown, NY.</em>
                     </Typography>
-                    <hr style={ {marginRight: "5rem"} }/>
+                    <hr/>
                 </Col>
             </Row>
-        </div>
+        </StyledHeader>
     );
 }
 
