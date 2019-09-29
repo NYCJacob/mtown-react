@@ -60,8 +60,8 @@ class App extends Component {
                                 <Route path="/contact" component={Contact}/>
                                 <Route path="/proposedlaws/accaptsup" component={AccAptStatus}/>
                                 <Route exact path="/proposedlaws/accapt/ucpb-recommendations" component={AccAptUCPB} />
-                                <Route exact path="/proposedlaws/str/str-2019sept" component={STRLaw}/>
-                                <Route path="/proposedlaws/str/str-environmental-assessment-form" component={StrEaf}/>
+                                <Route  path="/proposedlaws/str/" component={STRLaw}/>
+                                {/*<Route path="/proposedlaws/str/str-environmental-assessment-form" component={StrEaf}/>*/}
                                 <Route exact path="/zoning" component={ZoningMap}/>
                                 <Route exact path="/" component={Homepage}/>
                                 <Route component={NoMatch}/>

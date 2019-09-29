@@ -6,6 +6,7 @@ import {Route} from "react-router-dom";
 
 import Str2019Sept from  "./Str2019Sept";
 import StrEaf from  "./StrEaf";
+import StrCompared from "./StrCompared";
 
 const  StyledSTRLaw = styled.section`
   //margin: 0 auto;
@@ -40,6 +41,10 @@ class STRLaw extends React.Component {
                             <Route
                                 exact path="/proposedlaws/str/str-environmental-assessment-form"
                                 component={StrEaf}
+                            />
+                            <Route
+                                exact path="/proposedlaws/str/str-laws-compared"
+                                component={StrCompared}
                             />
 
                         </Col>

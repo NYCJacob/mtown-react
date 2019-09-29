@@ -117,6 +117,7 @@ ol.level-bracketed-3 > li::before {
 `
 
 class Str2019Sept extends Component {
+
     render() {
         return (
             <StyledSTR2019>
