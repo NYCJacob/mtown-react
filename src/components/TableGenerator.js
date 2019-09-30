@@ -2,16 +2,7 @@ import React from 'react'
 import { strColumns, strData } from "../api/strData";
 
 function Table(props) {
-    // const {  columns, rows } = props
-
-    const columns = [
-        ...strColumns
-    ];
-
-    const rows = [
-        [1, 2, 3],
-        [1, 2, 3]
-    ]
+    const {  columns, rows } = props
 
     // render table
     return (
