@@ -3,7 +3,7 @@ import PDFViewer from '../PDFViewer/PDFViewer';
 import PDFJSBackend from '../../api/pdfbackend/pdfjs';
 import { Typography } from '@smooth-ui/core-sc';
 import { Col, Row, Button} from '@smooth-ui/core-sc';
-import ReactTable from "react-table";
+import { ReactTable } from 'react-table'
 import "react-table/react-table.css";
 
 class RescueSquad extends Component {
