@@ -3,14 +3,44 @@ import PDFViewer from '../PDFViewer/PDFViewer';
 import PDFJSBackend from '../../api/pdfbackend/pdfjs';
 import { Typography } from '@smooth-ui/core-sc';
 import { Col, Row, Button} from '@smooth-ui/core-sc';
-import { ReactTable } from 'react-table'
-import "react-table/react-table.css";
+
+
+
+import { AgGridReact } from 'ag-grid-react';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 
 class RescueSquad extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            rescueContent: 0
+            rescueContent: 0,
+            columnDefs: [{
+                headerName: "Town", field: "town"
+            }, {
+                headerName: "Year", field: "year"
+            },{
+                headerName: "Total Revenue", field: "revenue"
+            },{
+                headerName: "Govt Support", field: "govt"
+            },{
+                headerName: "Staff", field: "employees"
+            },{
+                headerName: "Volunteers", field: "volunteers"
+            },{
+                headerName: "Salaries", field: "salaries"
+            }],
+            defaultColDef: { resizable: true },
+            rowData: [
+                {town: 'Olive', year: '2015', revenue: '152,152', govt: '98,000', employees: '0', volunteers: '40', salaries: "0"},
+                {town: 'Olive', year: '2016', revenue: '260,712', govt: '163,833', employees: '38',volunteers: '40', salaries: "148,341"},
+                {town: 'Olive', year: '2017', revenue: '410,058', govt: '258,000', employees: '36', volunteers: '0',salaries: "267,442"},
+                {town: 'Marbletown', year: '2015', revenue: '255,513', govt: '42,500', employees: '0', volunteers: '25', salaries: "0"},
+                {town: 'Marbletown', year: '2016', revenue: '277,723', govt: '42,500', employees: '0', volunteers: '25', salaries: "0"},
+                {town: 'Marbletown', year: '2017', revenue: '269,374', govt: '43,300', employees: '0', volunteers: '25', salaries: "0"},
+                {town: 'New Paltz', year: '2015', revenue: '870,536', govt: '0 *', employees: '20',volunteers: '50', salaries: "564,890"},
+                {town: 'New Paltz', year: '2016', revenue: '1,079,033', govt: '0 *', employees: '24', volunteers: '50', salaries: "629,029"}
+            ]
         };
         this.nextScreen = this.nextScreen.bind(this);
         this.backScreen = this.backScreen.bind(this);
@@ -37,42 +67,16 @@ class RescueSquad extends Component {
         }))
     }
 
+    onGridReady = params => {
+        this.gridApi = params.api;
+        this.gridColumnApi = params.columnApi;
+        };
+
+    onFirstDataRendered(params) {
+        params.api.sizeColumnsToFit();
+    }
+
     render() {
-        // react-table data
-        const tableColumns = [{
-            Header: 'Town',
-            accessor: 'town'
-        },{
-            Header: 'Year',
-            accessor: 'year'
-        },{
-            Header: 'Total Revenue',
-            accessor: 'revenue'
-        },{
-            Header: 'Gov\'t Support',
-            accessor: 'govt'
-        },{
-            Header: 'Staff',
-            accessor: 'employees'
-        },{
-            Header: 'Volunteers',
-            accessor: 'volunteers'
-        },{
-            Header: 'Salaries',
-            accessor: 'salaries'
-        }];
-
-        const tableData = [
-            {town: 'Olive', year: '2015', revenue: '152,152', govt: '98,000', employees: '0', volunteers: '40', salaries: "0"},
-            {town: 'Olive', year: '2016', revenue: '260,712', govt: '163,833', employees: '38',volunteers: '40', salaries: "148,341"},
-            {town: 'Olive', year: '2017', revenue: '410,058', govt: '258,000', employees: '36', volunteers: '0',salaries: "267,442"},
-            {town: 'Marbletown', year: '2015', revenue: '255,513', govt: '42,500', employees: '0', volunteers: '25', salaries: "0"},
-            {town: 'Marbletown', year: '2016', revenue: '277,723', govt: '42,500', employees: '0', volunteers: '25', salaries: "0"},
-            {town: 'Marbletown', year: '2017', revenue: '269,374', govt: '43,300', employees: '0', volunteers: '25', salaries: "0"},
-            {town: 'New Paltz', year: '2015', revenue: '870,536', govt: '0 *', employees: '20',volunteers: '50', salaries: "564,890"},
-            {town: 'New Paltz', year: '2016', revenue: '1,079,033', govt: '0 *', employees: '24', volunteers: '50', salaries: "629,029"}
-        ];
-
         return (
             <div>
                 { this.state.rescueContent === 0 &&
@@ -114,14 +118,27 @@ class RescueSquad extends Component {
                 {this.state.rescueContent === 1 &&
                     <div>
                         <Row>
-                            <Col>
+                            <Col >
                                 <p>
                                 Here is a breakdown of relevant data based on recent tax filings.  This information is public information and made available by
                                 Propublica (www.propublica.org) which is an awesome organization.
                                 </p>
-                                <ReactTable
-                                columns={tableColumns} data={tableData} defaultPageSize={8} showPagination={false}
-                                />
+                                {/*<ReactTable*/}
+                                {/*columns={tableColumns} data={tableData} defaultPageSize={8} showPagination={false}*/}
+                                {/*/>*/}
+                                <div style={{height:'50vh',width: '80vw'}}>
+                                    <div id="myGrid" style={{height:'100%',width: '100%'}}  className="ag-theme-balham" >
+                                        <AgGridReact
+                                            columnDefs={this.state.columnDefs}
+                                            defaultColDef={this.state.defaultColDef}
+                                            rowData={this.state.rowData}
+                                            onGridReady={this.onGridReady}
+                                            onFirstDataRendered={this.onFirstDataRendered.bind(this)}
+                                        >
+                                        </AgGridReact>
+                                    </div>
+                                </div>
+
                                 <sub><strong>*New Paltz states all revenue as other rather than listing any revenue for government grants.  It is unclear how much is from New Platz.  </strong> </sub>
                             </Col>
                         </Row>
