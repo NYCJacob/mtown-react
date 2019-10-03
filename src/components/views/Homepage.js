@@ -114,15 +114,19 @@ class Homepage extends React.Component {
                     <Col>
                         <Row style={ {textAlign: "center"} }>
                             <Col>
-                                <Typography fontSize="xx-large">
+                                <Typography fontSize="xx-large" style={ {position: "relative"}}>
                                     Proposed Laws
+                                    <span style={ {position: "absolute", top: '80%', left: '0', color: 'red', fontSize: "small", fontWeight: "bold", zIndex: '20'}}>
+                                            <i className="fas fa-megaphone" style={{color: "red", paddingRight: "0.25em"}}></i>
+                                            updated for Short Term Rental Law
+                                        </span>
                                 </Typography>
                             </Col>
                         </Row>
 
                         <Row justifyContent="center">
                             <StyledDivButton>
-                                    <div className="panel-button proposed-laws-panel">
+                                    <div className="panel-button proposed-laws-panel" style={ {position: "relative"}}>
                                         <LawLinks/>
                                         <i className="fal fa-balance-scale-left" style={{color: "orange", fontSize: "7em"}}>
                                         </i>
