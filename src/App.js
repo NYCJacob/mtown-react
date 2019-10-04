@@ -33,8 +33,6 @@ class App extends Component {
     return (
         <BrowserRouter>
                     <Grid style={ {
-                        // margin: "0.5rem auto",
-                        // padding: "2rem",
                         border: "1px solid grey",
                         boxShadow: "0 2px 7px #000"
                     } }>

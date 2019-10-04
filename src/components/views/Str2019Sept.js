@@ -8,7 +8,7 @@ import {Col, Grid, Row, Typography,
     ModalDialog,
     ModalContent,
     ModalHeader, ModalBody, ModalFooter} from "@smooth-ui/core-sc";
-import {sevcomments} from "./SevCommentData";
+import {StrCommentData} from "./StrCommentData";
 
 const  StyledSTR2019 = styled.section`
 
@@ -171,7 +171,7 @@ class Str2019Sept extends Component {
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.A}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary" onClick={() => onToggle(false)}>
@@ -200,7 +200,7 @@ class Str2019Sept extends Component {
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.grammar.A}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary" onClick={() => onToggle(false)}>
@@ -229,7 +229,7 @@ class Str2019Sept extends Component {
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.grammar.B}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary" onClick={() => onToggle(false)}>
@@ -260,7 +260,7 @@ class Str2019Sept extends Component {
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.grammar.C}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary" onClick={() => onToggle(false)}>
@@ -290,7 +290,7 @@ class Str2019Sept extends Component {
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.grammar.D}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary" onClick={() => onToggle(false)}>
@@ -314,35 +314,6 @@ class Str2019Sept extends Component {
                                     of promoting the health, safety and welfare of the Town, and in accordance with
                                     Municipal Home Rule Law, Article 2, Section 10, that gives the Town of Marbletown
                                     the power to protect and enhance its physical environment.
-                                    <Toggler>
-                                        {({ toggled, onToggle }) => (
-                                            <span>
-                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.5em"}}
-                                                   onClick={() => onToggle(true)}></i>
-                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
-                                                    <ModalDialog>
-                                                        <ModalContent>
-                                                            <ModalHeader>
-                                                                <Typography variant="h5" m={0}>
-                                                                    First time this clause is used
-                                                                    Article 2, Section 10
-                                                                    (11) The protection and enhancement of its physical and visual environment.
-                                                                </Typography>
-                                                            </ModalHeader>
-                                                            <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
-                                                            </ModalBody>
-                                                            <ModalFooter>
-                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
-                                                                    Close
-                                                                </Button>
-                                                            </ModalFooter>
-                                                        </ModalContent>
-                                                    </ModalDialog>
-                                                </Modal>
-                                            </span>
-                                        ) }
-                                    </Toggler>
                                 </p>
                             </section>
 
@@ -400,11 +371,11 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    Proof of septic compliance may not exist and not required to provide
+                                                                    Septic capacity is based on bedrooms.
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.E}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -419,7 +390,6 @@ class Str2019Sept extends Component {
                                                     )}
                                                 </Toggler>
                                                 <span> </span>
-
                                                 Children twelve years old and under are not counted as guests.
                                                 <Toggler>
                                                     {({toggled, onToggle}) => (
@@ -436,7 +406,7 @@ class Str2019Sept extends Component {
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.F}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -465,12 +435,11 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    Typo/clarity- clear demarcated  what is clearly demarcated, different gps units use different data- proof?
-                                                                    Why is Children caps
+                                                                    Typo/clarity
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.E}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -495,101 +464,11 @@ class Str2019Sept extends Component {
                                         <li>
                                             STR's must pass a yearly fire/safety inspection and the report of said inspection
                                             is to be attached to STR annual renewal permit applications.
-                                            <Toggler>
-                                                {({toggled, onToggle}) => (
-                                                    <span>
-                                                <i className=" far fa-comment"
-                                                   style={{color: "red", fontSize: "1.3em", paddingLeft: "0.5em"}}
-                                                   onClick={() => onToggle(true)}></i>
-                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
-                                                    <ModalDialog>
-                                                        <ModalContent>
-                                                            <ModalHeader>
-                                                                <Typography variant="h5" m={0}>
-                                                                    what of first year, who is approved inspector
-                                                                </Typography>
-                                                            </ModalHeader>
-                                                            <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
-                                                            </ModalBody>
-                                                            <ModalFooter>
-                                                                <Button variant="secondary"
-                                                                        onClick={() => onToggle(false)}>
-                                                                    Close
-                                                                </Button>
-                                                            </ModalFooter>
-                                                        </ModalContent>
-                                                    </ModalDialog>
-                                                </Modal>
-                                            </span>
-                                                )}
-                                            </Toggler>
-                                            <span> </span>
                                             All STR units must
                                             comply with NYS Building Code requirements.
-                                            <Toggler>
-                                                {({toggled, onToggle}) => (
-                                                    <span>
-                                                <i className=" far fa-comment"
-                                                   style={{color: "red", fontSize: "1.3em", paddingLeft: "0.5em"}}
-                                                   onClick={() => onToggle(true)}></i>
-                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
-                                                    <ModalDialog>
-                                                        <ModalContent>
-                                                            <ModalHeader>
-                                                                <Typography variant="h5" m={0}>
-                                                                    Proof of compliance
-                                                                </Typography>
-                                                            </ModalHeader>
-                                                            <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
-                                                            </ModalBody>
-                                                            <ModalFooter>
-                                                                <Button variant="secondary"
-                                                                        onClick={() => onToggle(false)}>
-                                                                    Close
-                                                                </Button>
-                                                            </ModalFooter>
-                                                        </ModalContent>
-                                                    </ModalDialog>
-                                                </Modal>
-                                            </span>
-                                                )}
-                                            </Toggler>
-                                            <span> </span>
                                         </li>
                                         <li>
                                             STR shall be limited to Single Rentals (multiple rentals simultaneously are not permitted) per home.
-                                            <Toggler>
-                                                {({toggled, onToggle}) => (
-                                                    <span>
-                                                <i className=" far fa-comment"
-                                                   style={{color: "red", fontSize: "1.3em", paddingLeft: "0.5em"}}
-                                                   onClick={() => onToggle(true)}></i>
-                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
-                                                    <ModalDialog>
-                                                        <ModalContent>
-                                                            <ModalHeader>
-                                                                <Typography variant="h5" m={0}>
-                                                                    Meaning unclear
-                                                                </Typography>
-                                                            </ModalHeader>
-                                                            <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
-                                                            </ModalBody>
-                                                            <ModalFooter>
-                                                                <Button variant="secondary"
-                                                                        onClick={() => onToggle(false)}>
-                                                                    Close
-                                                                </Button>
-                                                            </ModalFooter>
-                                                        </ModalContent>
-                                                    </ModalDialog>
-                                                </Modal>
-                                            </span>
-                                                )}
-                                            </Toggler>
-                                            <span> </span>
                                         </li>
                                         <li>
                                             The STR establishment shall not have more than ten occupants as lodgers and
@@ -610,7 +489,7 @@ class Str2019Sept extends Component {
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.F}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -645,7 +524,7 @@ class Str2019Sept extends Component {
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.G}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -680,7 +559,7 @@ class Str2019Sept extends Component {
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.grammar.F}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -695,38 +574,7 @@ class Str2019Sept extends Component {
                                                 )}
                                             </Toggler>
                                             <span> </span>
-                                            The maximum number of units that
-                                            can be registered by any property owner is 1 Owner Occupied and 1 Non-Owner Occupied.
-                                            <Toggler>
-                                                {({toggled, onToggle}) => (
-                                                    <span>
-                                                <i className=" far fa-comment"
-                                                   style={{color: "red", fontSize: "1.3em", paddingLeft: "0.5em"}}
-                                                   onClick={() => onToggle(true)}></i>
-                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
-                                                    <ModalDialog>
-                                                        <ModalContent>
-                                                            <ModalHeader>
-                                                                <Typography variant="h5" m={0}>
-                                                                    Does not address corp/llc loopholes
-                                                                </Typography>
-                                                            </ModalHeader>
-                                                            <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
-                                                            </ModalBody>
-                                                            <ModalFooter>
-                                                                <Button variant="secondary"
-                                                                        onClick={() => onToggle(false)}>
-                                                                    Close
-                                                                </Button>
-                                                            </ModalFooter>
-                                                        </ModalContent>
-                                                    </ModalDialog>
-                                                </Modal>
-                                            </span>
-                                                )}
-                                            </Toggler>
-                                            <span> </span>
+                                            The maximum number of units that can be registered by any property owner is 1 Owner Occupied and 1 Non-Owner Occupied.
                                         </li>
                                         <li>
                                             The Town Board can set caps on the number of both owner occupied STR's and
@@ -743,9 +591,7 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    Why not set first couple of years- what happens year 1
-                                                                    how granted- lottery, first come? annual decision
-                                                                    objective measure to decide number
+                                                                    No caps are set, they are just possible in the future
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
@@ -779,12 +625,11 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    Should have a standar pamphlet for assured compliance- everyone will make it up
-                                                                    and there is no noise ordinance
+                                                                    Each STR will have to guess what the applicable law are, if any.
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.I}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -815,11 +660,11 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    Some kind of standards for what this means- size, print size, fire exit path
+                                                                    No standards for what this means
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.J}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -852,11 +697,11 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    Alread state law
+                                                                    Already state law
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.K}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -886,11 +731,11 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    Clarity of terms, these would help farmers the most
+                                                                    Clarity of terms/spelling
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.grammar.G}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -923,11 +768,11 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    Residential zones become commerical enterprises
+                                                                    Residential zones become commercial enterprises
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.L}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -957,11 +802,11 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    May denial not shall- who decides- applicant due process, double J clause!
+                                                                    May deny not shall- double J clause!
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.M}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -993,11 +838,11 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    May denial not shall- who decides- applicant due process, double J clause!
+                                                                    May revoke not shall
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.N}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -1057,7 +902,7 @@ class Str2019Sept extends Component {
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.O}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
@@ -1092,11 +937,11 @@ class Str2019Sept extends Component {
                                                         <ModalContent>
                                                             <ModalHeader>
                                                                 <Typography variant="h5" m={0}>
-                                                                    no limit on non owner occupied anywhere
+                                                                    no limit on non owner occupied
                                                                 </Typography>
                                                             </ModalHeader>
                                                             <ModalBody lineHeight={2}>
-                                                                {/*{STRcomments.A}*/}
+                                                                {StrCommentData.policy.P}
                                                             </ModalBody>
                                                             <ModalFooter>
                                                                 <Button variant="secondary"
