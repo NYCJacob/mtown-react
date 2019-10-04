@@ -17,7 +17,7 @@ const LawLinks = () => (
 
                     <hr></hr>
                     <li>
-                            <NavLink to="/proposedlaws/accaptsup">
+                            <NavLink to="/proposedlaws/archive">
                                     Archived Proposals
                             </NavLink>
                             {/*<NavLink to="/proposedlaws/accaptsup">*/}

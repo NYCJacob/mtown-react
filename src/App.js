@@ -17,6 +17,7 @@ import SevReport from "./components/views/SevReport"
 import Homepage from "./components/views/Homepage"
 import AccAptUCPB from "./components/views/AccAptUCPB";
 import STRLaw from "./components/views/STRLaw";
+import Archive from "./components/views/Archive";
 import StrEaf from "./components/views/StrEaf";
 
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
@@ -35,7 +36,7 @@ class App extends Component {
                         // margin: "0.5rem auto",
                         // padding: "2rem",
                         border: "1px solid grey",
-                        boxShadow: "0 2px 10px #000"
+                        boxShadow: "0 2px 7px #000"
                     } }>
                         <Row ml={0}>
                             <Col xs={8} sm={12} md={12}>
@@ -56,9 +57,10 @@ class App extends Component {
                                 <Route path="/townboard/voting" component={TownBoard}/>
                                 <Route path="/townboard/rescuesquad" component={RescueSquad}/>
                                 <Route path="/proposedlaws/events" component={EventLaw}/>
+                                <Route path="/proposedlaws/archive" component={Archive}/>
                                 <Route path="/petition" component={Petition}/>
                                 <Route path="/contact" component={Contact}/>
-                                <Route path="/proposedlaws/accaptsup" component={AccAptStatus}/>
+                                <Route path="/proposedlaws/archive/accaptsup" component={AccAptStatus}/>
                                 <Route exact path="/proposedlaws/accapt/ucpb-recommendations" component={AccAptUCPB} />
                                 <Route  path="/proposedlaws/str/" component={STRLaw}/>
                                 {/*<Route path="/proposedlaws/str/str-environmental-assessment-form" component={StrEaf}/>*/}
