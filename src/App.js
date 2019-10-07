@@ -59,7 +59,7 @@ class App extends Component {
                                 <Route path="/petition" component={Petition}/>
                                 <Route path="/contact" component={Contact}/>
                                 <Route path="/proposedlaws/archive/accaptsup" component={AccAptStatus}/>
-                                <Route exact path="/proposedlaws/accapt/ucpb-recommendations" component={AccAptUCPB} />
+                                <Route exact path="/proposedlaws/archive/accapt/ucpb-recommendations" component={AccAptUCPB} />
                                 <Route  path="/proposedlaws/str/" component={STRLaw}/>
                                 {/*<Route path="/proposedlaws/str/str-environmental-assessment-form" component={StrEaf}/>*/}
                                 <Route exact path="/zoning" component={ZoningMap}/>

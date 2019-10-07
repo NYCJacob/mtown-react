@@ -9,6 +9,7 @@ import NovLL2Markup from "./NovLL2Markup"
 import Dec4LL2Markup from "./Dec4LL2Markup"
 import AccApt201901 from "./AccApt201901"
 import AccAptUCPB from "./AccAptUCPB"
+import {Dec4LL2Html} from "./Dec4LL2Html";
 
 class AccAptStatus extends Component {
     render() {
@@ -36,17 +37,17 @@ class AccAptStatus extends Component {
                     <Col xs={12}>
                         <SubTabNav
                             tabConfig = {[
-                                {"route": "/proposedlaws/accaptsup",
+                                {"route": "/proposedlaws/archive/accaptsup",
                                     "tabText": "January 2019 Draft Law"},
-                                {"route": "/proposedlaws/accaptsup/2018dec",
+                                {"route": "/proposedlaws/archive/accaptsup/2018dec",
                                     "tabText": "Dec 4 Draft"},
-                                {"route": "/proposedlaws/accaptsup/2018decMarkup",
+                                {"route": "/proposedlaws/archive/accaptsup/2018decMarkup",
                                     "tabText": "Dec 4 - Current Law Markup"},
-                                {"route": "/proposedlaws/accaptsup/2018november",
+                                {"route": "/proposedlaws/archive/accaptsup/2018november",
                                     "tabText": "Nov 20 Draft"},
-                                {"route": "/proposedlaws/accaptsup/2018november/markup",
+                                {"route": "/proposedlaws/archive/accaptsup/2018november/markup",
                                     "tabText": "Nov 20 v Current Law"},
-                                {"route": "/proposedlaws/accapt/ucpb-recommendations",
+                                {"route": "/proposedlaws/archive/accapt/ucpb-recommendations",
                                     "tabText": "UCPB Response"}
                             ]}
                         />
@@ -55,25 +56,30 @@ class AccAptStatus extends Component {
                 <Row>
                     <Col>
                         <Route
-                            exact path="/proposedlaws/accapt/ucpb-recommendations"
+                            exact path="/proposedlaws/archive/accaptsup"
+                            component={AccApt201901}
+                        />
+                        <Route
+                            exact path="/proposedlaws/archive/accapt/ucpb-recommendations"
                             component={AccAptUCPB}
                         />
                         <Route
-                            exact path="/proposedlaws/accaptsup/2018decMarkup"
+                            exact path="/proposedlaws/archive/accaptsup/2018dec"
+                            component={Dec2018LL2DraftLaw}
+                        />
+                        <Route
+                            exact path="/proposedlaws/archive/accaptsup/2018decMarkup"
                             component={Dec4LL2Markup}
                         />
                         <Route
-                            exact path="/proposedlaws/accaptsup/2018november"
+                            exact path="/proposedlaws/archive/accaptsup/2018november"
                             component={Nov2018LLTwo}
                         />
                         <Route
-                            exact path="/proposedlaws/accaptsup/2018november/markup"
+                            exact path="/proposedlaws/archive/accaptsup/2018november/markup"
                             component={NovLL2Markup}
                         />
-                        <Route
-                            exact path="/proposedlaws/accaptsup"
-                            component={AccApt201901}
-                        />
+
                     </Col>
                 </Row>
             </Grid>
