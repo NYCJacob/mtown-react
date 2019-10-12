@@ -33,6 +33,7 @@
     "ajv": "^6.10.2",
     "ajv-keywords": "^3.4.1",
     "babel-plugin-styled-components": "^1.10.6",
+    "caniuse-lite": "^1.0.30000999",
     "final-form": "^4.18.5",
     "mapbox-gl": "^0.53.1",
     "prop-types": "^15.7.2",
