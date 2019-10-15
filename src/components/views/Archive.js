@@ -13,12 +13,15 @@ const StyledTownBoard = styled.section`
   
 `;
 
-
 class Archive extends Component {
     render() {
         return (
             <StyledTownBoard>
-                <h2>Archived Proposals</h2>
+                <h2>
+                    <NavLink to="/proposedlaws/archive">
+                    Archived Proposals
+                    </NavLink>
+                </h2>
                 <ul>
                     <li><NavLink to="/proposedlaws/archive/accaptsup">
                         2019 Accessory Apartment Law

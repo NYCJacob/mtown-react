@@ -26,8 +26,6 @@ export default function NestingExample() {
             <div>
                 <SubTabNav
                     tabConfig = {[
-                        {"route": "/proposedlaws/archive/topics",
-                            "tabText": "Topics"},
                         {"route": "/proposedlaws/archive/accaptsup",
                             "tabText": "January 2019 Draft Law"},
                         {"route": "/proposedlaws/archive/accaptsup/2018dec",
@@ -46,13 +44,29 @@ export default function NestingExample() {
                 <hr />
 
                 <Switch>
-
-                    <Route path="/proposedlaws/archive/topics">
-                        <Topics />
-                    </Route>
                     <Route
                         exact path="/proposedlaws/archive/accaptsup"
                         component={AccApt201901}
+                    />
+                    <Route
+                        exact path="/proposedlaws/archive/accaptsup/ucpb-recommendations"
+                        component={AccAptUCPB}
+                    />
+                    <Route
+                        exact path="/proposedlaws/archive/accaptsup/2018dec"
+                        component={Dec2018LL2DraftLaw}
+                    />
+                    <Route
+                        exact path="/proposedlaws/archive/accaptsup/2018decMarkup"
+                        component={Dec4LL2Markup}
+                    />
+                    <Route
+                        exact path="/proposedlaws/archive/accaptsup/2018november"
+                        component={Nov2018LLTwo}
+                    />
+                    <Route
+                        exact path="/proposedlaws/archive/accaptsup/2018november/markup"
+                        component={NovLL2Markup}
                     />
                 </Switch>
             </div>
