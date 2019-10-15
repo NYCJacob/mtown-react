@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {NavLink, Route} from 'react-router-dom'
 
 import styled from "styled-components";
-import AccAptStatus from "./AccAptStatus";
 import AccessoryAptStatus from "./AccessoryAptStatus";
 
 

@@ -1,18 +1,18 @@
 export const StrCommentData = {
     "grammar": {
-        "A": "grammar: \'the the\'",
+        "A": "grammar: 'the the'",
         "B": "grammar: it's should be the possessive its'",
-        "C": "The correct word is likely \'preceding\' not \'proceeding\'",
+        "C": "The correct word is likely 'preceding' not 'proceeding'",
         "D": "spelling",
         "E": "grammar/spelling: clear demarcated  what is clearly demarcated, different gps units use different data- proof?\n" +
             "Why are Children and Address capitalized.",
         "F": "grammar: transferable not Transferable",
         "G": "spelling: trailors is not a word, it should be trailers",
-        "H": "spelling: occupied is spelled with three c\'s"
+        "H": "spelling: occupied is spelled with three c's"
     },
     "policy": {
         "A": "There are no details regarding when at Homeownership Program entails.  There are limited number of homes for sale" +
-            "with Marbletown at any given time.  Few home that might be considered \'affordable housing\' exist in Marbletown  Is " +
+            "with Marbletown at any given time.  Few home that might be considered 'affordable housing' exist in Marbletown  Is " +
             "it really smart policy to make it easy to buy a home if your finances are not strong.  Didn't the 2008 real estate" +
             "crash teach us anything?",
         "B": "Government fees are meant to cover the time and expense of providing the service- not to make a profit.  The " +
@@ -22,7 +22,7 @@ export const StrCommentData = {
         "E": "3(A)6: Septic requirements are based on bedrooms and do not mention occupancy.  " +
             "Homes with 1-3 bedrooms have the same septic requirements.  The septic rules do not address occupancy.",
         "F": "3(A)6 and 3(E): Children under 12 not counted as guests means large number of small children permitted without limit",
-        "G": "3(F)Complaints and Violations are not defined, and \'will be consider\' is vague and arbitrary",
+        "G": "3(F)Complaints and Violations are not defined, and 'will be consider' is vague and arbitrary",
         "H": "3(H): Setting caps is possible but none exist in this law.  It is not stated how permits will be issued when there " +
             "are caps.  For example, Rhinebeck uses a lottery system.  Also, there is no limit in distance between multiple STRs",
         "I": "3(I): This leaves it up to each STR to figure out all the relevant law.  Also, Marbletown currently has no noise regulations.",

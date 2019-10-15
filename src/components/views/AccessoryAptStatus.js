@@ -1,6 +1,4 @@
 import React from "react";
-import {Component} from "react";
-import { Grid, Col, Row, Typography} from '@smooth-ui/core-sc';
 import SubTabNav from "../SubTabNav";
 import {
     BrowserRouter as Router,

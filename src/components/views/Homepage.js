@@ -70,7 +70,7 @@ a {
       z-index: 20;
       li {
         list-style: none;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
       }
   } 
 
