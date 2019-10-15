@@ -2,7 +2,8 @@ import React from "react";
 import {Component} from "react";
 import { Grid, Col, Row, Typography} from '@smooth-ui/core-sc';
 import SubTabNav from "../SubTabNav";
-import {Route} from "react-router-dom";
+import {Route, Switch, NavLink} from "react-router-dom";
+import {useRouteMatch, useParams} from "react-router"
 import Dec2018LL2DraftLaw from "./Dec2018LL2DraftLaw"
 import Nov2018LLTwo from "./Nov2018LLTwoproposed"
 import NovLL2Markup from "./NovLL2Markup"
@@ -10,9 +11,10 @@ import Dec4LL2Markup from "./Dec4LL2Markup"
 import AccApt201901 from "./AccApt201901"
 import AccAptUCPB from "./AccAptUCPB"
 import {Dec4LL2Html} from "./Dec4LL2Html";
+import NestingExample from "./Topics";
 
-class AccAptStatus extends Component {
-    render() {
+function AccAptStatus () {
+
         return (
             <Grid>
                 <Row>
@@ -29,7 +31,7 @@ class AccAptStatus extends Component {
                             This only included the accessory apartments section from the first Local Law #2.
                         </Typography><br/><br/>
                         <Typography lineHeight={1.2}>
-                            On January 8, 2019 the Marbletown Town Board introduduced <strong>2019 Accessory Apartment Law.</strong>
+                            On January 8, 2019 the Marbletown Town Board introduced <strong>2019 Accessory Apartment Law.</strong>
                             This law seems to be a new draft of the Local Law 2018 #2 Accessory Apartment law.
                         </Typography>
                         <hr/>
@@ -52,41 +54,46 @@ class AccAptStatus extends Component {
                             ]}
                         />
                     </Col>
+
+                    <Col>
+                        <NavLink to="/proposedlaws/archive/accaptsup">Accaptsup</NavLink>
+                        <NavLink to="/proposedlaws/archive/accaptsup/ucpb-recommendations">ucpb-recommendations</NavLink>
+                        <NavLink to="/proposedlaws/archive/accaptsup/2018dec">2018dec</NavLink>
+                    </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <Route
-                            exact path="/proposedlaws/archive/accaptsup"
-                            component={AccApt201901}
-                        />
-                        <Route
-                            exact path="/proposedlaws/archive/accapt/ucpb-recommendations"
-                            component={AccAptUCPB}
-                        />
-                        <Route
-                            exact path="/proposedlaws/archive/accaptsup/2018dec"
-                            component={Dec2018LL2DraftLaw}
-                        />
-                        <Route
-                            exact path="/proposedlaws/archive/accaptsup/2018decMarkup"
-                            component={Dec4LL2Markup}
-                        />
-                        <Route
-                            exact path="/proposedlaws/archive/accaptsup/2018november"
-                            component={Nov2018LLTwo}
-                        />
-                        <Route
-                            exact path="/proposedlaws/archive/accaptsup/2018november/markup"
-                            component={NovLL2Markup}
-                        />
+                        <Switch>
+                            <Route
+                                exact path="/proposedlaws/archive/accaptsup"
+                                component={AccApt201901}
+                            />
+                            <Route
+                                exact path="/proposedlaws/archive/accaptsup/ucpb-recommendations"
+                                component={AccAptUCPB}
+                            />
+                            <Route
+                                exact path="/proposedlaws/archive/accaptsup/2018dec"
+                                component={Dec2018LL2DraftLaw}
+                            />
+                            <Route
+                                exact path="/proposedlaws/archive/accaptsup/2018decMarkup"
+                                component={Dec4LL2Markup}
+                            />
+                            <Route
+                                exact path="/proposedlaws/archive/accaptsup/2018november"
+                                component={Nov2018LLTwo}
+                            />
+                            <Route
+                                exact path="/proposedlaws/archive/accaptsup/2018november/markup"
+                                component={NovLL2Markup}
+                            />
 
+                        </Switch>
                     </Col>
                 </Row>
             </Grid>
         )
-    }
 }
 
 export default AccAptStatus
-
-

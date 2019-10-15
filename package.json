@@ -7,8 +7,9 @@
     "ag-grid-react": "^21.2.2",
     "create-react-class": "^15.6.3",
     "node-sass": "^4.12.0",
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
+    "react": "^16.10.2",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
     "react-scripts": "2.1.5",
     "react-table": "^6.10.3"
   },
@@ -40,9 +41,8 @@
     "react-final-form": "^4.1.0",
     "react-helmet": "^5.2.1",
     "react-iframe": "^1.8.0",
-    "react-router-dom": "^4.3.1",
     "styled-components": "^4.4.0",
     "styled-reset": "^2.0.17",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.4"
   }
 }

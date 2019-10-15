@@ -3,6 +3,7 @@ import {NavLink, Route} from 'react-router-dom'
 
 import styled from "styled-components";
 import AccAptStatus from "./AccAptStatus";
+import AccessoryAptStatus from "./AccessoryAptStatus";
 
 
 const StyledTownBoard = styled.section`
@@ -26,8 +27,9 @@ class Archive extends Component {
                 <div>
                     <Route
                         exact path="/proposedlaws/archive/accaptsup"
-                        component={AccAptStatus}
+                        component={AccessoryAptStatus}
                     />
+
                 </div>
 
             </StyledTownBoard>
