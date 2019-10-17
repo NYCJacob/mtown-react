@@ -59,7 +59,7 @@ class StrCompared extends Component {
                 },
                 {restriction: "corp owners allowed", woodstock:"Y*", woodstockCode:"3-E",  marbletown:"Y", marbletownCode:"", rhinebeck:"N", rhinebeckCode:""},
                 {section: "comments",
-                    restriction: "Woodstock states \'Registration by a coporation whose owners have an interest in more than one STR is prohibited in residential districts.\'",
+                    restriction: "Woodstock states 'Registration by a coporation whose owners have an interest in more than one STR is prohibited in residential districts.'",
                 },
                 {restriction: "Neighbor notice", woodstock:"N", woodstockCode:"",  marbletown:"N", marbletownCode:"", rhinebeck:"Y", rhinebeckCode:"3-A"},
                 {section: "comments",

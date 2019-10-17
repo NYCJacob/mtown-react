@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from "styled-components";
-import { Grid, Col, Row } from '@smooth-ui/core-sc';
+import { Col, Row } from '@smooth-ui/core-sc';
 import SubTabNav from "../SubTabNav";
 import {Route} from "react-router-dom";
 
 import Str2019Sept from  "./Str2019Sept";
-import StrEaf from  "./StrEaf";
+import StrEaf2019 from "./StrEaf2019";
 import StrCompared from "./StrCompared";
 
 const  StyledSTRLaw = styled.section`
@@ -40,7 +40,7 @@ class STRLaw extends React.Component {
                             />
                             <Route
                                 exact path="/proposedlaws/str/str-environmental-assessment-form"
-                                component={StrEaf}
+                                component={StrEaf2019}
                             />
                             <Route
                                 exact path="/proposedlaws/str/str-laws-compared"

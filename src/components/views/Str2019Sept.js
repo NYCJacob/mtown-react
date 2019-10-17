@@ -1,7 +1,7 @@
 import React from "react";
 import {Component} from "react";
 import styled from "styled-components";
-import {Col, Grid, Row, Typography,
+import {Col, Row, Typography,
     Button,
     Toggler,
     Modal,

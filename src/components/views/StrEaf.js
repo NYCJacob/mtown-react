@@ -1,6 +1,6 @@
 import React from "react";
 import {Component} from "react";
-import {Col, Grid, Row, Typography} from "@smooth-ui/core-sc";
+import {Col, Row} from "@smooth-ui/core-sc";
 
 
 class StrEaf extends Component {
