@@ -4,8 +4,6 @@ import PDFJSBackend from '../../api/pdfbackend/pdfjs';
 import { Typography } from '@smooth-ui/core-sc';
 import { Col, Row, Button} from '@smooth-ui/core-sc';
 
-
-
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';

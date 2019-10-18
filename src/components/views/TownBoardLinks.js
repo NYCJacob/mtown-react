@@ -17,7 +17,9 @@ const TownBoardLinks = () => (
             </li>
             <hr />
             <li>
-                2020 Budget (coming soon)
+                <NavLink exact to="/townboard/budget2020">
+                    Marbletown 2020 Budget
+                </NavLink>
             </li>
         </ul>
     </div>

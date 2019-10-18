@@ -18,7 +18,7 @@ import Homepage from "./components/views/Homepage"
 import AccAptUCPB from "./components/views/AccAptUCPB";
 import STRLaw from "./components/views/STRLaw";
 import Archive from "./components/views/Archive";
-import StrEaf from "./components/views/StrEaf";
+import MarbletownBudget2020 from "./components/views/MarbletownBudget2020"
 
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
 
@@ -32,9 +32,13 @@ class App extends Component {
   render() {
     return (
         <BrowserRouter>
+            <Helmet>
+                <title>MarbletownInfo: local politics of Marbletown NY</title>
+            </Helmet>
                     <Grid style={ {
                         border: "1px solid grey",
-                        boxShadow: "0 2px 7px #000"
+                        boxShadow: "0 2px 7px #000",
+                        maxWidth: '90vw'
                     } }>
                         <Row ml={0}>
                             <Col xs={8} sm={12} md={12}>
@@ -46,13 +50,12 @@ class App extends Component {
                         </Row>
 
 
-                            <Helmet>
-                                <title>MarbletownInfo: local politics of Marbletown NY</title>
-                            </Helmet>
+
                             <Switch>
                                 <Route exact path="/sev" component={SevReport}/>
                                 <Route path="/census" component={CensusView}/>
                                 <Route path="/townboard/voting" component={TownBoard}/>
+                                <Route path="/townboard/budget2020" component={MarbletownBudget2020}/>
                                 <Route path="/townboard/rescuesquad" component={RescueSquad}/>
                                 <Route path="/proposedlaws/events" component={EventLaw}/>
                                 <Route path="/proposedlaws/archive" component={Archive}/>
