@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {AgGridReact} from "ag-grid-react";
 import "../../styles/ag-grid-custom.sass"
+import { budgetData } from '../../api/budgetData'
 
 
 export default function MarbletownBudget2020() {
@@ -19,9 +20,7 @@ export default function MarbletownBudget2020() {
     );
 
     const [ rowData, setrowData ] = useState(
-        [
-            {codeDesc: '', category: '', actual2016: '', proposed2020: ''}
-        ]
+        budgetData
     );
 
     const onFirstDataRendered = function(params) {
@@ -32,10 +31,10 @@ export default function MarbletownBudget2020() {
         <div>
             <div>
                 <h2>
-                    COMING SOON
+                    MORE COMING SOON
                 </h2>
                 <div style={{height:'75vh',width: '90vw'}}>
-                    <div id="budgetGrid" style={{height:'75vh',width: '75vw'}}  className="ag-theme-balham" >
+                    <div id="budgetGrid" style={{height:'80vh',width: '90vw'}}  className="ag-theme-balham" >
                         <AgGridReact
                             columnDefs={columnDefs}
                             rowData={rowData}

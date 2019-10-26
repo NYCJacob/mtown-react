@@ -118,7 +118,7 @@ class Homepage extends React.Component {
                                     Proposed Laws
                                     <span style={ {position: "absolute", top: '80%', left: '0', color: 'red', fontSize: "small", fontWeight: "bold", zIndex: '20'}}>
                                             <i className="fas fa-megaphone" style={{color: "red", paddingRight: "0.25em"}}></i>
-                                            updated for Short Term Rental Law
+                                            updated for Short Term Rentals
                                         </span>
                                 </Typography>
                             </Col>
@@ -141,8 +141,12 @@ class Homepage extends React.Component {
                         <Box>
                             <Row>
                                 <Col style={ {textAlign: "center"} }>
-                                    <Typography fontSize="xx-large">
+                                    <Typography fontSize="xx-large" style={ {position: "relative"}}>
                                         Town Board
+                                        <span style={ {position: "absolute", top: '80%', left: '0', color: 'red', fontSize: "small", fontWeight: "bold", zIndex: '21'}}>
+                                            <i className="fas fa-megaphone" style={{color: "red", paddingRight: "0.25em"}}></i>
+                                            updated for 2020 Budget
+                                        </span>
                                     </Typography>
                                 </Col>
                             </Row>
