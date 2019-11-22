@@ -25,6 +25,8 @@ class STRLaw extends React.Component {
                                         "tabText": "Proposed STR Law of 2019"},
                                     {"route": "/proposedlaws/str/str-environmental-assessment-form",
                                         "tabText": "Environmental Assessment Form"},
+                                    {"route": "/proposedlaws/str/str-ucpb-recommendations",
+                                        "tabText": "Ulster County Planning Board Response"},
                                     {"route": "/proposedlaws/str/str-laws-compared",
                                         "tabText": "STR law compared"},
                                 ]}
@@ -41,6 +43,10 @@ class STRLaw extends React.Component {
                             <Route
                                 exact path="/proposedlaws/str/str-environmental-assessment-form"
                                 component={StrEaf2019}
+                            />
+                            <Route
+                                exact path="/proposedlaws/str/str-ucpb-recommendations"
+                                component={StrCompared}
                             />
                             <Route
                                 exact path="/proposedlaws/str/str-laws-compared"
