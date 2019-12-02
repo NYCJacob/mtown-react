@@ -16,40 +16,65 @@ export default function MarbletownBudget2020() {
     //   for col spanning and style customization for comments row
     const cellClassRules = {
         "comments-cell": 'data.section === "comments"',
-        "revenue": 'data.section === "revenue"'
+        "revenue-cell": 'data.section === "revenue"',
+        "revenue-totals": 'data.section === "revenue-totals"'
     };
 
     const cellClassRulesTotals = {
-        "totals-cell": 'data.section === "totals"'
+        "totals-cell": 'data.section === "spending-totals" ',
+        "spending-cell": 'data.section === "spending" ',
+        "revenue-cell": 'data.section === "revenue"',
+        "revenue-totals": 'data.section === "revenue-totals"'
     };
+
 
     const [ columnDefs, setcolumnDefs ] = useState(
             [
-                {headerName: "Description", field: 'codeDesc', minWidth: 10, autoHeight: true,
+                {headerName: "Description", field: 'codeDesc', width: 110, autoHeight: true,
                     colSpan: function (params) {
                         if (isCommentRow(params)){
                             return 8;
                         } else if ( isRevenueRow(params)) {
-                            return 8;
+                            return 1;
                         } else {
                             return 1
                         }
                     },
                     cellClassRules: cellClassRules
                 },
-                {headerName: "Category", field: 'category', width: 100},
-                {headerName: "2016 Actual", field: "actual2016", width: 125,
+                {
+                    headerName: "2016 - 2017",
+                    children: [
+                        {headerName: "Cat", field: 'category', width: 100},
+                        {
+                            headerName: "2016 Actual", field: "actual2016", width: 110,
+                            columnGroupShow: "open",
+                            cellClassRules: cellClassRulesTotals},
+                        {
+                            headerName: "2017 Actual", field: "actual2017", width: 110,
+                            columnGroupShow: "open",
+                            cellClassRules: cellClassRulesTotals},
+                    ]
+                },
+                {headerName: "2018 Actual", field: "actual2018", width: 110,
                     cellClassRules: cellClassRulesTotals},
-                {headerName: "2017 Actual", field: "actual2017", width: 125,
+                {headerName: "2019 Adopted", field: "adopted2019", width: 110,
                     cellClassRules: cellClassRulesTotals},
-                {headerName: "2018 Actual", field: "actual2018", width: 125,
+                {headerName: "2019 Est Actual", field: "estactual2019", width: 110,
                     cellClassRules: cellClassRulesTotals},
-                {headerName: "2019 Adopted", field: "adopted2019", width: 125,
+                {headerName: "2020 Proposed", field: "proposed2020", width: 110,
                     cellClassRules: cellClassRulesTotals},
-                {headerName: "2019 Est Actual", field: "estactual2019", width: 125,
+                {headerName: "2020 Nov 20 ", field: "adopted2020ONov20", width: 110,
                     cellClassRules: cellClassRulesTotals},
-                {headerName: "2020 Proposed", field: "proposed2020", width: 125,
-                    cellClassRules: cellClassRulesTotals}
+                {
+                    headerName: "Nov 20 Change",
+                    width: 110,
+                    colId: "nov20Diff",
+                    cellClassRules: cellClassRulesTotals,
+                    valueGetter: function (params) {
+                        return params.data.adopted2020ONov20 - params.data.proposed2020;
+                    }
+                }
             ]
     );
 
@@ -65,9 +90,6 @@ export default function MarbletownBudget2020() {
     return(
         <div>
             <div>
-                <h2>
-                    MORE COMING SOON
-                </h2>
                 <div style={{height:'75vh',width: '90vw'}}>
                     <div id="budgetGrid" style={{height:'80vh',width: '90vw'}}  className="ag-theme-balham" >
                         <AgGridReact
