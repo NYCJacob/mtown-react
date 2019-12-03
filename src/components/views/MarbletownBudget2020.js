@@ -8,25 +8,51 @@ export default function MarbletownBudget2020() {
     function isCommentRow(params) {
         return params.data.section === "comments";
     }
+
     function isRevenueRow(params) {
         return params.data.section === "revenue";
+    }
+
+    function isRevenueTotalsRow(params) {
+        return params.data.section === "revenue-totals";
+    }
+
+    function isTotalsRow(params) {
+        return params.data.section === "spending-totals";
+    }
+
+    function isSurplusRow(params) {
+        return params.data.section === "surplus";
     }
 
     //   see ag-grid/javascript-grid-column-spanning
     //   for col spanning and style customization for comments row
     const cellClassRules = {
+        "actual-cell": 'data.section === "actual" ',
         "comments-cell": 'data.section === "comments"',
         "revenue-cell": 'data.section === "revenue"',
         "revenue-totals": 'data.section === "revenue-totals"'
     };
 
     const cellClassRulesTotals = {
+        "actual-cell": 'data.section === "actual" ',
         "totals-cell": 'data.section === "spending-totals" ',
         "spending-cell": 'data.section === "spending" ',
         "revenue-cell": 'data.section === "revenue"',
         "revenue-totals": 'data.section === "revenue-totals"'
     };
 
+    function formatNumber(number) {
+        return number.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+    }
+
+    function currencyFormatter(params) {
+        if (params.value > 0){
+            return "$" + formatNumber(params.value);
+        } else
+            return params.value;
+
+    }
 
     const [ columnDefs, setcolumnDefs ] = useState(
             [
@@ -36,7 +62,15 @@ export default function MarbletownBudget2020() {
                             return 8;
                         } else if ( isRevenueRow(params)) {
                             return 1;
-                        } else {
+                        } else if (isTotalsRow(params)) {
+                            return 2
+                        } else if (isRevenueTotalsRow(params)) {
+                            return 2
+                        }
+                        else if (isSurplusRow(params)) {
+                            return 2
+                        }
+                        else {
                             return 1
                         }
                     },
@@ -45,7 +79,7 @@ export default function MarbletownBudget2020() {
                 {
                     headerName: "2016 - 2017",
                     children: [
-                        {headerName: "Cat", field: 'category', width: 100},
+                        {headerName: "Cat", field: 'category', width: 50},
                         {
                             headerName: "2016 Actual", field: "actual2016", width: 110,
                             columnGroupShow: "open",
@@ -56,19 +90,29 @@ export default function MarbletownBudget2020() {
                             cellClassRules: cellClassRulesTotals},
                     ]
                 },
-                {headerName: "2018 Actual", field: "actual2018", width: 110,
-                    cellClassRules: cellClassRulesTotals},
+                {
+                    headerName: "2018 Actual",
+                    field: "actual2018",
+                    width: 110,
+                    valueFormatter: currencyFormatter,
+                    cellClassRules: cellClassRulesTotals,
+
+                },
                 {headerName: "2019 Adopted", field: "adopted2019", width: 110,
+                    valueFormatter: currencyFormatter,
                     cellClassRules: cellClassRulesTotals},
                 {headerName: "2019 Est Actual", field: "estactual2019", width: 110,
+                    valueFormatter: currencyFormatter,
                     cellClassRules: cellClassRulesTotals},
                 {headerName: "2020 Proposed", field: "proposed2020", width: 110,
+                    valueFormatter: currencyFormatter,
                     cellClassRules: cellClassRulesTotals},
                 {headerName: "2020 Nov 20 ", field: "adopted2020ONov20", width: 110,
+                    valueFormatter: currencyFormatter,
                     cellClassRules: cellClassRulesTotals},
                 {
-                    headerName: "Nov 20 Change",
-                    width: 110,
+                    headerName: "Nov Diff",
+                    width: 90,
                     colId: "nov20Diff",
                     cellClassRules: cellClassRulesTotals,
                     valueGetter: function (params) {
