@@ -36,6 +36,7 @@ export default function MarbletownBudget2020() {
 
     const cellClassRulesTotals = {
         "actual-cell": 'data.section === "actual" ',
+        "actual-delta": 'data.section === "actual-delta" ',
         "totals-cell": 'data.section === "spending-totals" ',
         "spending-cell": 'data.section === "spending" ',
         "revenue-cell": 'data.section === "revenue"',
@@ -56,7 +57,7 @@ export default function MarbletownBudget2020() {
 
     const [ columnDefs, setcolumnDefs ] = useState(
             [
-                {headerName: "Description", field: 'codeDesc', width: 110, autoHeight: true,
+                {headerName: "Description", field: 'codeDesc', width: 100, autoHeight: true,
                     colSpan: function (params) {
                         if (isCommentRow(params)){
                             return 8;
@@ -79,7 +80,7 @@ export default function MarbletownBudget2020() {
                 {
                     headerName: "2016 - 2017",
                     children: [
-                        {headerName: "Cat", field: 'category', width: 50},
+                        {headerName: "Cat", field: 'category', width: 70},
                         {
                             headerName: "2016 Actual", field: "actual2016", width: 110,
                             columnGroupShow: "open",
@@ -88,15 +89,16 @@ export default function MarbletownBudget2020() {
                             headerName: "2017 Actual", field: "actual2017", width: 110,
                             columnGroupShow: "open",
                             cellClassRules: cellClassRulesTotals},
-                    ]
-                },
-                {
-                    headerName: "2018 Actual",
-                    field: "actual2018",
-                    width: 110,
-                    valueFormatter: currencyFormatter,
-                    cellClassRules: cellClassRulesTotals,
+                        {
+                            headerName: "2018",
+                            field: "actual2018",
+                            width: 70,
+                            columnGroupShow: null,
+                            valueFormatter: currencyFormatter,
+                            cellClassRules: cellClassRulesTotals,
 
+                        }
+                    ]
                 },
                 {headerName: "2019 Adopted", field: "adopted2019", width: 110,
                     valueFormatter: currencyFormatter,
@@ -134,8 +136,12 @@ export default function MarbletownBudget2020() {
     return(
         <div>
             <div>
-                <div style={{height:'75vh',width: '90vw'}}>
-                    <div id="budgetGrid" style={{height:'80vh',width: '90vw'}}  className="ag-theme-balham" >
+                <div style={{height:'95vh',width: '90vw'}}>
+                    <h2 style={ {marginTop: '0', marginBottom: '0', textAlign: 'center'} }>Consolidated Marbletown Budgets 2016 - 2020</h2>
+                    <p style={ {marginTop: '0', marginBottom: '0', fontSize: '0.75em'} }>This spreadsheet is complex because of the many mistakes found in published documents and multiple versions of the 2020 budget.
+                        It took many hours to try to consolidate this data and present it as clearly as possible.  There is <strong>no guarantee</strong> this data is 100% accurate.
+                    Please contact us if you see any errors, have any questions or input.</p>
+                    <div id="budgetGrid" style={{height:'90vh',width: '90vw'}}  className="ag-theme-balham" >
                         <AgGridReact
                             columnDefs={columnDefs}
                             rowData={rowData}
