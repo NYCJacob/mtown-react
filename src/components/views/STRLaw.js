@@ -8,6 +8,7 @@ import Str2019Sept from  "./Str2019Sept";
 import StrEaf2019 from "./StrEaf2019";
 import StrUCPB2019 from "./StrUCPB2019";
 import StrCompared from "./StrCompared";
+import Str2019Adopted from "./Str2019Adopted";
 
 const  StyledSTRLaw = styled.section`
   //margin: 0 auto;
@@ -22,8 +23,10 @@ class STRLaw extends React.Component {
                         <Col xs={12}>
                             <SubTabNav
                                 tabConfig = {[
+                                    {"route": "/proposedlaws/str/str-2019dec-adopted",
+                                        "tabText": "STR Adopted Law- Redlined"},
                                     {"route": "/proposedlaws/str/str-2019sept",
-                                        "tabText": "Proposed STR Law of 2019"},
+                                        "tabText": "Proposed STR Law Analyzed"},
                                     {"route": "/proposedlaws/str/str-environmental-assessment-form",
                                         "tabText": "Environmental Assessment Form"},
                                     {"route": "/proposedlaws/str/str-ucpb-recommendations",
@@ -37,6 +40,10 @@ class STRLaw extends React.Component {
 
                     <Row>
                         <Col>
+                            <Route
+                                exact path="/proposedlaws/str/str-2019dec-adopted"
+                                component={Str2019Adopted}
+                            />
                             <Route
                                 exact path="/proposedlaws/str/str-2019sept"
                                 component={Str2019Sept}

@@ -5,7 +5,7 @@ const LawLinks = () => (
     <div className="proposed-laws">
             <ul className="subDropDown" >
                     <li style={ {paddingBottom: "0.5rem"}}>
-                            <NavLink to="/proposedlaws/str/str-2019sept" >
+                            <NavLink to="/proposedlaws/str/str-2019dec-adopted" >
                                     Short Term Rental Law
                             </NavLink>
                     </li>
