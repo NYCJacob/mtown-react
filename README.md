@@ -15,3 +15,4 @@ The site is live at [MarbletownInfo.org](https://www.marbletowninfo.org)
 - Interactive map under zoning route showing town zones, farms and tax parcel details
 - React Router routing
 - custom nav and accordion components
+
