@@ -1,14 +1,7 @@
 import React from "react";
 import {Component} from "react";
 import styled from "styled-components";
-import {Col, Row, Typography,
-    Button,
-    Toggler,
-    Modal,
-    ModalDialog,
-    ModalContent,
-    ModalHeader, ModalBody, ModalFooter} from "@smooth-ui/core-sc";
-import {StrCommentData} from "./StrCommentData";
+import {Col, Row} from "@smooth-ui/core-sc";
 
 const StyledDeletedText = styled.span`
   text-decoration: line-through;
