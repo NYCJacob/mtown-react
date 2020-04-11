@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
+import styled from '@emotion/styled';
+
 import { NavLink } from 'react-router-dom';
 import {css, down, up} from "@smooth-ui/core-sc";
 

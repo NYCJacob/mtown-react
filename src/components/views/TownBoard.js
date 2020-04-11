@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
-import styled from "styled-components";
+import styled from '@emotion/styled';
+
 import "../../styles/responsAccord.css";
 import { tboard2018 } from "../../api/townboardapi";
 import Accordion from "../reactrespaccordion/Accordion";

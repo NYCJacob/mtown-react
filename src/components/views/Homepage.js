@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Col, Row, Typography} from '@smooth-ui/core-sc';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 import {NavLink} from 'react-router-dom';
 import LawLinks from "./LawLinks";
 import TownBoardLinks from "./TownBoardLinks"

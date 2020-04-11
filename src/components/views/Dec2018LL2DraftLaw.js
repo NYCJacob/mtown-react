@@ -1,6 +1,7 @@
 import React from "react";
 import {Component} from "react";
-import styled from "styled-components";
+import styled from '@emotion/styled';
+
 import { Grid, Col, Row} from '@smooth-ui/core-sc';
 
 const  StyledDec2018LL2DraftLaw = styled.section`

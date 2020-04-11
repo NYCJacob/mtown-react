@@ -1,6 +1,6 @@
 import React from "react";
 import {Component} from "react";
-import styled from "styled-components";
+import styled from '@emotion/styled';
 import { Grid, Col, Row, Typography, Button,
     Toggler,
     Modal,
