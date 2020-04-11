@@ -1,8 +1,33 @@
 
+export const tboard2019 = [
+    [
+        {
+            "date": "2019, 01, 01",
+            "present": "RP, JB, TS, ES, DL",
+            "minutesLink": "",
+            "resolutions": [
+                {
+                    "title": "RESOLUTION #1 - ",
+                    "voting": "5-0"
+                },
+                {
+                    "title": "RESOLUTION #2 –",
+                    "voting": "5-0"
+                },
+                {
+                    "title": "RESOLUTION # 3 - ",
+                    "voting": "5-0"
+                }
+            ]
+        }
+        ]
+    ]
+
+
 export const tboard2018 = [
                             [
                             {
-                                "date": "2018-01-09",
+                                "date": "2018, 01, 09",
                                 "present": "RP, JB, TS, ES, DL",
                                 "minutesLink": "https://www.marbletown.net/sites/marbletownny/files/minutes/01.09.2018townboardmtgminutesfinal.pdf",
                                 "resolutions": [
@@ -33,7 +58,7 @@ export const tboard2018 = [
                                 ]
                             },
                             {
-                                "date": "2018-01-23",
+                                "date": "2018, 01, 23",
                                 "present": "RP, JB, TS, ES, DL",
                                 "minutesLink": "https://www.marbletown.net/town-board/minutes/town-board-minutes-30",
                                 "resolutions": [
@@ -70,7 +95,7 @@ export const tboard2018 = [
                             ],
                             [
                                 {
-                                    "date": "2018-02-06",
+                                    "date": "2018, 02, 06",
                                     "present": "RP, JB, TS, ES, DL",
                                     "minutesLink": "https://www.marbletown.net/town-board/minutes/town-board-minutes-30",
                                     "resolutions": [
@@ -81,7 +106,7 @@ export const tboard2018 = [
                                     ]
                                 },
                                 {
-                                    "date": "2018-02-20",
+                                    "date": "2018, 02, 20",
                                     "present": "RP, JB, TS, ES, DL",
                                     "minutesLink": "https://www.marbletown.net/town-board/minutes/town-board-minutes-32",
                                     "resolutions": [
@@ -130,7 +155,7 @@ export const tboard2018 = [
                             ],
                             [
                                 {
-                                    "date": "2018-03-20",
+                                    "date": "2018, 03, 20",
                                     "present": "RP, JB, TS, ES, DL",
                                     "minutesLink": "https://www.marbletown.net/sites/marbletownny/files/minutes/3.20.2018townboardmtgminutes.final_.pdf",
                                     "resolutions": [
@@ -167,7 +192,7 @@ export const tboard2018 = [
                             ],
                             [
                                 {
-                                    "date": "2018-04-03",
+                                    "date": "2018, 04, 03",
                                     "present": "RP, TS, ES, DL",
                                     "minutesLink": "https://www.marbletown.net/sites/marbletownny/files/minutes/4.3.2018townboardmtgminutes.final_.pdf",
                                     "resolutions": [
@@ -196,7 +221,7 @@ export const tboard2018 = [
                                     ]
                                 },
                                 {
-                                    "date": "2018-04-17",
+                                    "date": "2018, 04, 17",
                                     "present": "RP, JB, TS, ES, DL",
                                     "minutesLink": "https://www.marbletown.net/sites/marbletownny/files/minutes/4.17.2018townboardmtgminutes.final_-1.pdf",
                                     "resolutions": [
@@ -242,7 +267,7 @@ export const tboard2018 = [
                             ],
                             [
                                 {
-                                    "date": "2018-05-01",
+                                    "date": "2018, 05, 01",
                                     "present": "RP, JB, TS, ES, DL",
                                     "minutesLink": "https://www.marbletown.net/sites/marbletownny/files/minutes/5.01.2018townboardmtgminutes.final_.pdf",
                                     "resolutions": [
@@ -262,7 +287,7 @@ export const tboard2018 = [
                                     ]
                                 },
                                 {
-                                    "date": "2018-05-15",
+                                    "date": "2018, 05, 15",
                                     "present": "RP, JB, TS, ES, DL",
                                     "minutesLink": "https://www.marbletown.net/sites/marbletownny/files/minutes/5.01.2018townboardmtgminutes.final_.pdf",
                                     "resolutions": [
@@ -283,7 +308,7 @@ export const tboard2018 = [
                             ],
                             [
                                 {
-                                    "date": "2018-06-09",
+                                    "date": "2018, 06, 09",
                                     "present": "RP, JB, TS, ES",
                                     "minutesLink": "https://www.marbletown.net/sites/marbletownny/files/minutes/06.09.2018townboardmtgminutes.final-page-001-converted.pdf",
                                     "resolutions": [
@@ -323,7 +348,7 @@ export const tboard2018 = [
                                     ]
                                 },
                                 {
-                                    "date": "2018-06-19",
+                                    "date": "2018, 06, 19",
                                     "present": "RP, JB, TS, ES, DL",
                                     "minutesLink": "https://www.marbletown.net/sites/marbletownny/files/minutes/06.19.2018townboardmtgminutes.final-page-001-converted.pdf",
                                     "resolutions": [
