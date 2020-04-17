@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
 import styled from '@emotion/styled';
 
 import { tboard2018, tboard2019 } from "../../api/townboardapi";
-// import Accordion from "../reactrespaccordion/Accordion";
-// import "../../styles/responsAccord.css";
+import "../../styles/responsAccord.css";
 import {  Accordion,  AccordionItem,  AccordionButton,  AccordionPanel,} from "@reach/accordion";
 import "@reach/accordion/styles.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 const StyledTownBoard = styled.section`
   td {
@@ -22,6 +23,14 @@ const StyledTownBoard = styled.section`
   }
 `;
 
+const StyledReachAccordion = styled(Accordion)`    
+    [data-reach-accordion-button] {
+      background-color: #ffad2c;
+      border: 2px solid darkorange;
+    }
+
+`
+
 const monthsArr =
     ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -30,25 +39,30 @@ const yearsAvailable = [
     { "year": "2019", "townboardMembers": [ "Rich Parete (Supv)", "Tim Sweeney", "Joe Borzumato", "Eric Stewart", "Don LaFera" ] }
     ];
 
-const yearsAccordionGenerator = (years) =>{
+function YearsAccordionGenerator(years) {
+    // Declare state for arrow rotation value
+    const [rotation, setRotation] = useState(270)
+
     return(
-        years.map((yearData, index) => {
+        years.map((yearData,index) => {
+            let faRotation = 270;
             let { year, townboardMembers } = yearData;
             return(
-                <Accordion key={`key${index}`} collapsible>
+                <StyledReachAccordion key={`key${index}`} collapsible onChange={ () => setRotation(rotation * 360)  }>
                     <AccordionItem>
                         <h3>
                             <AccordionButton>
-                                <h1>
-                                    {year}:{townboardMembers}
-                                </h1>
+                                <FontAwesomeIcon icon={['fad', 'caret-circle-down']} transform={{ rotate: faRotation  }} />
+                                {year}
+                                <hr/>
+                                <span>Town Board Members: {townboardMembers}</span>
                             </AccordionButton>
                             <AccordionPanel>
                                 {accordGenerator(year)}
                             </AccordionPanel>
                         </h3>
                     </AccordionItem>
-                </Accordion>
+                </StyledReachAccordion>
             )
             }
         )
@@ -96,7 +110,7 @@ const accordGenerator = (year) => {
         yearData.map((month, index) => {
             return (
                 <div  key={`key${index}`}>
-                    <Accordion collapsible>
+                    <StyledReachAccordion collapsible>
                         <AccordionItem>
                             <h3>
                                 <AccordionButton>
@@ -107,23 +121,21 @@ const accordGenerator = (year) => {
                                 </AccordionPanel>
                             </h3>
                         </AccordionItem>
-                    </Accordion>
+                    </StyledReachAccordion>
                 </div>
             )
         }
         ))};
 
-class TownBoard extends Component {
-    render() {
+function TownBoard() {
         return (
             <StyledTownBoard>
                 <h2>Town Board Votes</h2>
-                <Accordion>
-                    {yearsAccordionGenerator(yearsAvailable)}
-                </Accordion>
+                <StyledReachAccordion>
+                    {YearsAccordionGenerator(yearsAvailable)}
+                </StyledReachAccordion>
             </StyledTownBoard>
         )
-    }
 };
 
 

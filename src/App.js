@@ -19,6 +19,12 @@ import AccAptUCPB from "./components/views/AccAptUCPB";
 import STRLaw from "./components/views/STRLaw";
 import Archive from "./components/views/Archive";
 import MarbletownBudget2020 from "./components/views/MarbletownBudget2020"
+// Fontawesome setup for components
+//  see https://stackoverflow.com/questions/49319363/how-to-integrate-fontawesome-5-pro-with-react
+//
+import { library, config } from '@fortawesome/fontawesome-svg-core'
+import { fad } from '@fortawesome/pro-duotone-svg-icons'
+library.add(fad)
 
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
 
