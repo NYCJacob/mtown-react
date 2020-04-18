@@ -40,25 +40,32 @@ const yearsAvailable = [
     ];
 
 function YearsAccordionGenerator(years) {
-    // Declare state for arrow rotation value
-    const [rotation, setRotation] = useState(270)
+    // need to declare rotate value for each year accordion to avoid syncing all caret rotation value
+    const [yearRotation, setYearRotation] = useState(270)
 
     return(
         years.map((yearData,index) => {
-            let faRotation = 270;
             let { year, townboardMembers } = yearData;
+            const faYearRotation = () => {
+                if (yearRotation === 270) {
+                    setYearRotation(0)
+                } else {
+                    setYearRotation(270)
+                }
+            };
+
             return(
-                <StyledReachAccordion key={`key${index}`} collapsible onChange={ () => setRotation(rotation * 360)  }>
+                <StyledReachAccordion key={`key${index}`} collapsible onChange={ faYearRotation  }>
                     <AccordionItem>
                         <h3>
                             <AccordionButton>
-                                <FontAwesomeIcon icon={['fad', 'caret-circle-down']} transform={{ rotate: faRotation  }} />
+                                <FontAwesomeIcon icon={['fad', 'caret-circle-down']} transform={{ rotate: yearRotation  }} pull= "left" size= "lg" />
                                 {year}
                                 <hr/>
                                 <span>Town Board Members: {townboardMembers}</span>
                             </AccordionButton>
                             <AccordionPanel>
-                                {accordGenerator(year)}
+                                {AccordGenerator(year)}
                             </AccordionPanel>
                         </h3>
                     </AccordionItem>
@@ -98,7 +105,10 @@ const monthAccordionGenerator = (month) => {
     )
 }
 
-const accordGenerator = (year) => {
+function AccordGenerator(year) {
+    // Declare state for arrow rotation value
+    const [rotation, setRotation] = useState(270)
+    
     let yearData;
     if (year === "2018"){
         yearData = tboard2018;
@@ -108,12 +118,21 @@ const accordGenerator = (year) => {
     }
     return(
         yearData.map((month, index) => {
+                const faRotation = () => {
+                    if (rotation === 270) {
+                        setRotation(0)
+                    } else {
+                        setRotation(270)
+                    }
+                };
+
             return (
                 <div  key={`key${index}`}>
-                    <StyledReachAccordion collapsible>
+                    <StyledReachAccordion collapsible onChange={ faRotation  }>
                         <AccordionItem>
                             <h3>
                                 <AccordionButton>
+                                    <FontAwesomeIcon icon={['fad', 'caret-circle-down']} transform={{ rotate: rotation  }} pull= "left" />
                                     {monthsArr[index]}
                                 </AccordionButton>
                                 <AccordionPanel>
