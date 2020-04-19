@@ -1150,6 +1150,13 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.28"
 
+"@fortawesome/pro-duotone-svg-icons@^5.13.0":
+  version "5.13.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-duotone-svg-icons/-/5.13.0/pro-duotone-svg-icons-5.13.0.tgz#d37942a4ad814da0b286f33d0115cd7d584662a8"
+  integrity sha512-9A6rH9o6k3Deh8upCQx80o39XdUeFNcpaF/IEhJtKzPFwRp5hGFYYJhMcN5Y0F5q7IfBDLcabw+SiDVdteqRfg==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
+
 "@fortawesome/react-fontawesome@^0.1.9":
   version "0.1.9"
   resolved "https://npm.fontawesome.com/@fortawesome/react-fontawesome/-/0.1.9/react-fontawesome-0.1.9.tgz#c865b9286c707407effcec99958043711367cd02"
@@ -1434,6 +1441,17 @@
   integrity sha512-G7wm0poMVR+aT9W5O8C6cnrZBYskIAfgBfPwByOY7F6TwEj7HqHDs7tZ/3Paj6UIZZ9lkVfhHPEGGvfOpEXhlg==
   dependencies:
     "@reach/utils" "^0.10.0"
+    tslib "^1.10.0"
+
+"@reach/tabs@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@reach/tabs/-/tabs-0.10.0.tgz#cf5df6da6c32b346fce0734f847592a367987329"
+  integrity sha512-jdzj4i2IWTzFibfPZyrgJTIm0qyUXCzYvXC6w8Qn4UB5/+8DLn2SPYcDzKSfWKHEVhfMM37kiNV5eetmJPgJ6g==
+  dependencies:
+    "@reach/auto-id" "^0.10.0"
+    "@reach/descendants" "^0.10.0"
+    "@reach/utils" "^0.10.0"
+    prop-types "^15.7.2"
     tslib "^1.10.0"
 
 "@reach/utils@^0.10.0":
