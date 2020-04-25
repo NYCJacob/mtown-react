@@ -50,7 +50,7 @@ class App extends Component {
                             <Col xs={8} sm={12} md={12}>
                                 <Header/>
                             </Col>
-                            <StyledHamburgerCol xs={2} >
+                            <StyledHamburgerCol sm={2} >
                                 <OverlayHamburger/>
                             </StyledHamburgerCol>
                         </Row>
