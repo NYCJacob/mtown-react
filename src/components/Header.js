@@ -1,5 +1,6 @@
 import React from 'react';
-import { Row, Col, Typography, styled, css, down } from '@smooth-ui/core-sc'
+import styled from '@emotion/styled';
+import { Row, Col, Typography } from '@smooth-ui/core-sc'
 import { NavLink } from 'react-router-dom';
 
 const StyledHeader = styled.div`
@@ -9,7 +10,6 @@ const StyledHeader = styled.div`
 
 const HeaderContainer = styled.h1`
 * { box-sizing: border-box; }
-    //margin-bottom: 0.5em;
     margin-top: 0.05em;
     margin-left: 0.3em;
     padding-bottom: 0;
@@ -29,17 +29,18 @@ const Logo1 = styled.span`
     border-bottom: .5rem solid;
     padding-left: 1rem;
     padding-right: .5rem;
-    ${down('lg', css`
-      font-size: 1.0em;
-    `)}
-    ${down('md', css`
-      font-size: 0.8em;
-    `)}
-    ${down('sm', css`
+
+    @media(max-width: 575px) {
       font-size: 0.6em;
       border-bottom: .3rem solid;
-    `)}
-`;
+    }
+    @media(min-width: 576px) and (max-width: 767px) {
+          font-size: 0.8em;
+    }
+    @media(min-width: 768px) {
+          font-size: 1.0em;
+    }
+`
 
 const Logo2 = styled.span`
 * { box-sizing: border-box; }
@@ -87,6 +88,9 @@ function Header(props) {
                     <hr/>
                 </Col>
             </Row>
+            {/*<StyledHamburgerCol sm={2} >*/}
+            {/*    <OverlayHamburger/>*/}
+            {/*</StyledHamburgerCol>*/}
         </StyledHeader>
     );
 }

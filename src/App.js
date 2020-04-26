@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
 import {Helmet} from "react-helmet";
-import { styled, up, css, Grid, Col, Row } from '@smooth-ui/core-sc';
+import styled from '@emotion/styled';
 import Header from "./components/Header";
 import OverlayHamburger from "./components/OverlayHamburger";
 import ZoningMap from "./components/views/ZoningMap";
@@ -34,6 +33,31 @@ const StyledHamburgerCol = styled(Col)`
 `)}
 `;
 
+const StyledAppGridContainer = styled.div`
+  min-height: 99vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+  border: 1px solid grey;
+  boxShadow: 0 2px 7px #000;
+  maxWidth: 90vw;
+  rowGap: 0.01em;
+`
+
+const StyledHeaderArea = styled.div`
+  grid-area: header;
+`
+const StyledFooterArea = styled.footer`
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.5em;
+  align-self: end;
+`
+
 class App extends Component {
   render() {
     return (
@@ -41,24 +65,12 @@ class App extends Component {
             <Helmet>
                 <title>MarbletownInfo: local politics of Marbletown NY</title>
             </Helmet>
-                    <Grid style={ {
-                        border: "1px solid grey",
-                        boxShadow: "0 2px 7px #000",
-                        maxWidth: '90vw',
-                        rowGap: '0.01em'
-                    } }>
-                        <Row ml={0}>
-                            <Col xs={8} sm={12} md={12}>
-                                <Header/>
-                            </Col>
-                            <StyledHamburgerCol sm={2} >
-                                <OverlayHamburger/>
-                            </StyledHamburgerCol>
-                        </Row>
+                    <StyledAppGridContainer>
+                        <StyledHeaderArea>
+                            <Header/>
+                        </StyledHeaderArea>
 
-
-
-                            <Switch>
+                        <Switch>
                                 <Route exact path="/sev" component={SevReport}/>
                                 <Route path="/census" component={CensusView}/>
                                 <Route path="/townboard/voting" component={TownBoard}/>
@@ -76,14 +88,10 @@ class App extends Component {
                                 <Route exact path="/" component={Homepage}/>
                                 <Route component={NoMatch}/>
                             </Switch>
-                        <Row style={ {marginTop: "1.5rem"} }>
-                            <Col textAlign="center" fontSize={{xs: "0.5em",md: "0.7em"}}>
-                                <footer>
-                                    &#169; 2018-2019 FutureSense LLC
-                                </footer>
-                            </Col>
-                        </Row>
-                    </Grid>
+                        <StyledFooterArea>
+                            &#169; 2018-2020 FutureSense LLC
+                        </StyledFooterArea>
+                    </StyledAppGridContainer>
         </BrowserRouter>
     );
   }
