@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import {Helmet} from "react-helmet";
-import { globalStyle, createGlobalStyle, styled, up, css, Grid, Col, Row } from '@smooth-ui/core-sc';
+import { styled, up, css, Grid, Col, Row } from '@smooth-ui/core-sc';
 import Header from "./components/Header";
 import OverlayHamburger from "./components/OverlayHamburger";
 import ZoningMap from "./components/views/ZoningMap";
@@ -44,13 +44,14 @@ class App extends Component {
                     <Grid style={ {
                         border: "1px solid grey",
                         boxShadow: "0 2px 7px #000",
-                        maxWidth: '90vw'
+                        maxWidth: '90vw',
+                        rowGap: '0.01em'
                     } }>
                         <Row ml={0}>
                             <Col xs={8} sm={12} md={12}>
                                 <Header/>
                             </Col>
-                            <StyledHamburgerCol xs={2} >
+                            <StyledHamburgerCol sm={2} >
                                 <OverlayHamburger/>
                             </StyledHamburgerCol>
                         </Row>

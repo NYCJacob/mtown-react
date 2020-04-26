@@ -94,6 +94,7 @@ ul li ul.subDropDown:hover {
   visibility: visible;
   opacity: 1;
   display: block;
+  color: red;
 }
 
 ul li:hover i {
