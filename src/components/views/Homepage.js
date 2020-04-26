@@ -1,7 +1,4 @@
 import React from 'react'
-/** @jsx jsx */
-import {jsx, css} from '@emotion/core'
-import {Box, Col, Row, Typography} from '@smooth-ui/core-sc';
 import styled from '@emotion/styled';
 import {NavLink} from 'react-router-dom';
 import LawLinks from "./LawLinks";
@@ -22,6 +19,7 @@ a {
 }
 
 .panel-button {
+  overflow: scroll;
   font-size: 1.0rem;
   background: #40617F;
   border: 0px;
@@ -57,8 +55,7 @@ a {
 }
 
 .panel-button a {
-  //padding: 1.0rem;
-  text-decoration: none;
+  text-decoration: underline;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,18 +87,22 @@ a {
 `;
 
 const StyledCssGridHome = styled.div`
-
 ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 1rem;
   list-style: none;
+  @media(min-width: 576px){
+      grid-gap: 0.1rem;  
+  }
+  @media(max-width: 575px){
+      grid-gap: 0.01rem;  
+  }
+  @media(max-width: 414px){
+      grid-gap: 0;  
+  }
+  margin: 0;
+  padding-left: 0;
 }
-
-//ul > li {
-//  border: 1px solid #E2E2E2;
-//  border-radius: .5rem;
-//}
 
 ul > li > figure {
   max-height: 220px;
@@ -190,7 +191,7 @@ class Homepage extends React.Component {
                         <figure>
                             <figcaption><h3>Town Board</h3></figcaption>
                             <StyledDivButton>
-                                <div className="panel-button proposed-laws-pane">
+                                <div className="panel-button proposed-laws-panel" style={{position: "relative"}}>
                                     <TownBoardLinks/>
                                     <i className="fal fa-landmark" style={{color: "orange"}}>
                                     </i>
